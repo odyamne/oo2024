@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+   <title>Kalkulaator</title>
+
+   <script>
+        let calcobj=null;
+        let exports={}
+        function startPage(){
+            calcobj=new Calculator();
+        }
+        function buttonPress(){
+            calcobj.pressButton(event.target.value);
+            panel1.innerText=calcobj.getPanelContents();
+        }
+   </script>
+   <script src="calculator.js"></script>
+
+   <style>
+    input[type=button] {
+        width: 50px;
+        height: 30px;
+        margin: 2px;
+    }
+    #panel1 {
+        width: 220px;
+        height: 30px;
+        margin-bottom: 10px;
+        border: 1px solid black;
+        text-align: right;
+        padding-right: 5px;
+        font-size: 16px;
+    }
+    .row {
+        margin-bottom: 5px;
+    }
+</style>
+</head>
+  <body onload="startPage()">
+    <div id="panel1">0</div>
+    
+    <div class="row">
+      <input type="button" value="MC" onclick="buttonPress()" />
+      <input type="button" value="MR" onclick="buttonPress()" />
+      <input type="button" value="MS" onclick="buttonPress()" />
+      <input type="button" value="M+" onclick="buttonPress()" />
+      <input type="button" value="M-" onclick="buttonPress()" />
+    </div>
+    <div class="row">
+      <input type="button" value="C" onclick="buttonPress()" />
+      <input type="button" value="<-" onclick="buttonPress()" />
+      <input type="button" value="^" onclick="buttonPress()" />
+      <input type="button" value="mod" onclick="buttonPress()" />
+      <input type="button" value="n!" onclick="buttonPress()" />
+    </div>
+    <div class="row">
+      <input type="button" value="+/-" onclick="buttonPress()" />
+      <input type="button" value="e^x" onclick="buttonPress()" />
+      <input type="button" value="10^x" onclick="buttonPress()" />
+      <input type="button" value="π" onclick="buttonPress()" />
+      <input type="button" value="e" onclick="buttonPress()" />
+    </div>
+    <div class="row">
+      <input type="button" value="7" onclick="buttonPress()" />
+      <input type="button" value="8" onclick="buttonPress()" />
+      <input type="button" value="9" onclick="buttonPress()" />
+      <input type="button" value="+" onclick="buttonPress()" />
+      <input type="button" value="x^2" onclick="buttonPress()" />
+    </div>
+    <div class="row">
+      <input type="button" value="4" onclick="buttonPress()" />
+      <input type="button" value="5" onclick="buttonPress()" />
+      <input type="button" value="6" onclick="buttonPress()" />
+      <input type="button" value="-" onclick="buttonPress()" />
+      <input type="button" value="√" onclick="buttonPress()" />
+    </div>
+    <div class="row">
+      <input type="button" value="1" onclick="buttonPress()" />
+      <input type="button" value="2" onclick="buttonPress()" />
+      <input type="button" value="3" onclick="buttonPress()" />
+      <input type="button" value="X" onclick="buttonPress()" />
+      <input type="button" value="1/x" onclick="buttonPress()" />
+    </div>
+    <div class="row">
+      <input type="button" value="0" onclick="buttonPress()" />
+      <input type="button" value="." onclick="buttonPress()" />
+      <input type="button" value="=" onclick="buttonPress()" />
+      <input type="button" value="/" onclick="buttonPress()" />
+      <input type="button" value="|x|" onclick="buttonPress()" />
+    </div>
+  </body>
+</html>
