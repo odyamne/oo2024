@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Hoiuse kasv</title>
+    <style>
+        label, input, div {
+            margin: 10px 0;
+            display: block;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hoiuse kasv</h1>
+
+    <label for="initialSavings">Algkapital (EUR):</label>
+    <input type="number" id="initialSavings" oninput="drawChart()" placeholder="Sisesta algkapital">
+
+    <label for="monthlyDeposit">Igakuine hoius (EUR):</label>
+    <input type="number" id="monthlyDeposit" oninput="drawChart()" placeholder="Sisesta igakuine hoius">
+
+    <label for="interestRate">Aastane intressimäär (%):</label>
+    <input type="number" id="interestRate" oninput="drawChart()" step="0.01" placeholder="Sisesta intressimäär">
+
+    <label for="years">Kestus (aastates):</label>
+    <input type="number" id="years" oninput="drawChart()" placeholder="Sisesta kestus aastates">
+
+    <canvas id="savingsChart" width="600" height="400"></canvas>
+
+    <script src="savingsCalc.js"></script>
+</body>
+</html>
